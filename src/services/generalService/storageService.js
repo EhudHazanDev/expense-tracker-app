@@ -8,7 +8,7 @@ export const storageService = {
     deleteStorage,
 }
 
-function query(entityType) {
+function query(entityType=null) {
     const entities = JSON.parse(localStorage.getItem(entityType))
     return entities;
 }
@@ -19,7 +19,7 @@ function getById(entityType, entityId) {
 
 function post(entityType, newEntity, idLength) {
     newEntity._id = _generateId(idLength);
-    const entities = query(entityType)
+    const entities = query(entityType);
     entities.push(newEntity);
     _save(entityType, entities);
     return newEntity;

@@ -20,11 +20,11 @@ export const AddTransaction = ({ getTransactions }) => {
   return (
     <div className = "addTransaction">
       <h3>Add Transaction</h3>
-      <label for="Text">Text</label><br></br>
+      <label id="Text">Text</label><br></br>
       <input type="text"
         onChange={(event) => { setText(event.target.value); }}
         placeholder="Insert text..." /><br></br><br></br>
-      <label for="Text">Amount</label><br></br>
+      <label id="Text">Amount</label><br></br>
       <input type="text"
         onChange={(event) => { setAmount(event.target.value); }}
         placeholder="Insert amount..." /><br></br><br></br>

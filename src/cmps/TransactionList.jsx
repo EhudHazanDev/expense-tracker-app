@@ -1,11 +1,18 @@
 import React from 'react'
 import { PreviewTransaction } from './PreviewTransaction'
 
-export const TransactionsList = () => {
+export const TransactionsList = (transactions) => {
+  const message = "There are no transactions yet in this account.";
+
   return (
     <div>
-    <h3>Transactions List</h3>
-    <PreviewTransaction />
+      <h3>History</h3>
+      {/* {transactions && 
+        transactions.map((transaction) =>
+          (<PreviewTransaction transaction={transaction} />)
+        )
+      } */}
+      {!transactions && {message}}
     </div>
   )
 }

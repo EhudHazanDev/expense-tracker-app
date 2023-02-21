@@ -1,11 +1,10 @@
 import React from 'react'
 
-export const PreviewTransaction = (transaction) => {
+export const PreviewTransaction = ({transaction}) => {
   return (
     <div className="PreviewTransaction">
-      <h4>PreviewHistory</h4>
-      {transaction.text}
-      {transaction.amount}
+      <p>{transaction.text}</p>
+      <p>{transaction.amount}</p>
     </div>
   )
 }

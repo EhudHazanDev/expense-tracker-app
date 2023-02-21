@@ -8,7 +8,7 @@ export const storageService = {
     deleteStorage,
 }
 
-function query(entityType=null) {
+function query(entityType = null) {
     const entities = JSON.parse(localStorage.getItem(entityType))
     return entities;
 }

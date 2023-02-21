@@ -1,25 +1,25 @@
-import React , {useState} from 'react'
-import { TransactionsList } from '../cmps/TransactionList'
+import React, { useState, useEffect } from 'react'
 import { AddTransaction } from '../cmps/AddTransaction'
-import { BalanceView } from '../cmps/BalanceView';
+import { TransactionInfo } from '../cmps/TransactionInfo';
+import { TransactionService } from '../services/TransactionService';
 
 export const ExpenseTracker = () => {
+    const [transactions, setTransactions] = useState([]);
+    useEffect(() => {
+        const trans = TransactionService.query();
+        setTransactions(trans);
+    }, []);
 
-    const [transactions, setTransactions] = useState(null);
-
-    
-    const getTransactions = (transactions) => {
-        setTransactions(transactions);
+    const updateTransaction = () => {   
+        const transactionEntity = TransactionService.query();     
+        setTransactions(transactionEntity);
     }
-    
+
     return (
         <div>
-            <div className="mainArea">
-                <h1>Expense Tracker</h1>
-            </div>
-            <BalanceView transactions={transactions}/>
-            <TransactionsList transactions={transactions}/>
-            <AddTransaction getTransactions={getTransactions}/>
+            <h1>Expense Tracker</h1>
+            <TransactionInfo transactions={transactions} />
+            <AddTransaction updateTransaction={updateTransaction} />
         </div>
     )
 }

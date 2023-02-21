@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import TransactionService  from '../services/TransactionService'
+import {TransactionService}  from '../services/TransactionService'
 
-export const AddTransaction = ({ getTransactions }) => {
+export const AddTransaction = ({ updateTransaction }) => {
 
   const [amount, setAmount] = useState(0);
   const [text, setText] = useState("");
@@ -12,8 +12,8 @@ export const AddTransaction = ({ getTransactions }) => {
       text,
       amount,
     };
-    const TransactionEntity = TransactionService.add(newTransaction);
-    getTransactions(TransactionEntity);
+    TransactionService.add(newTransaction)
+    updateTransaction();
     event.preventDefault();
   };
 

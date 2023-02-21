@@ -1,4 +1,4 @@
-// import { Tasks, Waiters, Tables, CustomerRequests } from "../../data/dummyData";
+import { Transactions } from "../../data/dummyData";
 import { storageService } from "./storageService";
 
 export const dataService = {

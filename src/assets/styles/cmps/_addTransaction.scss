@@ -1,0 +1,20 @@
+.addTransaction {
+    font-weight: bold;
+    h3 {
+        padding: 4px;
+        border-bottom: 4px solid #adbac7;
+    }
+    .addTransactionButton {
+        width: 15vw;
+        padding: 10px;
+        background-color: rgb(139, 83, 180);
+    }
+    .setText {
+        width: 14vw;
+        padding: 8px;
+    }
+    .setAmount {
+        width: 14vw;
+        padding: 8px;
+    }
+}

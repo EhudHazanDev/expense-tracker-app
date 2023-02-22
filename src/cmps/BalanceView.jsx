@@ -16,26 +16,32 @@ export const BalanceView = ({transactions}) => {
     transactions.map((transaction) =>
       (sum += +transaction.amount)
     )
-    setAmount(sum)
+    setAmount(sum);
   }
 
   const calculateTotals = () => {
     let income = 0;
     let expanse = 0;
     transactions.map((transaction) =>
-      (parseInt(transaction.amount) > 0 ? income += parseInt(transaction.amount) : expanse += parseInt(transaction.amount))
+      (+transaction.amount > 0 ? income += +transaction.amount : expanse += +transaction.amount)
     )
     setTotalIncome(income);
     setTotalExpanse(expanse);
   }
 
   return (
-    <div className="BalanceView">
-      <h2>Your Balance:</h2>
-      <p>{amount}</p>
-      <div>
-        <p>{totalIncome}</p>
-        <p>{totalExpanse}</p>
+    <div className="balanceView">
+      <h3>Your Balance:</h3>
+      <p className="amount">${amount}</p>
+      <div className="total">
+        <div className="leftSideIncome">
+         <p className = "income">INCOME</p>
+         <p style = {{color:"green"}}>${totalIncome}</p>
+        </div>
+        <div className="rightSideExpanse">
+          <p className = "Expanse">EXPENSE</p>
+          <p style = {{color:"red"}}>${totalExpanse}</p>
+        </div>
       </div>
     </div>
   )

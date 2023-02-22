@@ -1,0 +1,9 @@
+.transactionsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3 {
+        padding: 5px 0px;
+        border-bottom: 4px solid #adbac7;
+    }
+}

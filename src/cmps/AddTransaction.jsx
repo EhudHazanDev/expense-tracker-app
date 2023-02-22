@@ -19,16 +19,16 @@ export const AddTransaction = ({ updateTransaction }) => {
 
   return (
     <div className = "addTransaction">
-      <h3>Add Transaction</h3>
+      <h3>Add new transaction</h3>
       <label id="Text">Text</label><br></br>
-      <input type="text"
+      <input className="setText" type="text"
         onChange={(event) => { setText(event.target.value); }}
-        placeholder="Insert text..." /><br></br><br></br>
+        placeholder="Enter text..." /><br></br><br></br>
       <label id="Text">Amount</label><br></br>
-      <input type="text"
+      <input className="setAmount" type="text"
         onChange={(event) => { setAmount(event.target.value); }}
-        placeholder="Insert amount..." /><br></br><br></br>
-      <button onClick={(event) => {
+        placeholder="Enter amount..." /><br></br><br></br>
+      <button className="addTransactionButton" onClick={(event) => {
         createTransaction(event);
       }}
       >Add Transacton
